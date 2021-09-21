@@ -20,30 +20,31 @@ public class LeftRotationArrays {
         List<Integer>  inputList;
         int offset = 0;
 
-        while((line=br.readLine()) != null) {
-            if(count == 0){
-                inputList = Stream.of(line.replaceAll("\\s+$", "")
-                                .split(" "))
+        try {
+            while((line=br.readLine()) != null) {
+                if(count == 0){
+                    inputList = Stream.of(line.replaceAll("\\s+$", "")
+                                    .split(" "))
+                                    .map(Integer::parseInt)
+                                    .collect(toList());
+
+                    offset = inputList.get(1);
+                    count++;
+                    continue;
+                }
+
+
+                    inputArraysList =
+                            Stream.of(line.replaceAll("\\s+$", "").split(" "))
                                 .map(Integer::parseInt)
                                 .collect(toList());
 
-                offset = inputList.get(1);
-                count++;
-                continue;
-            }
+                    System.out.println(leftRotation(inputArraysList, offset));
+                    count = 0;
 
-            try {
-                inputArraysList =
-                        Stream.of(line.replaceAll("\\s+$", "").split(" "))
-                            .map(Integer::parseInt)
-                            .collect(toList());
-
-                System.out.println(leftRotation(inputArraysList, offset));
-                count = 0;
             }
-            catch (Exception ex) {
-                throw new RuntimeException(ex);
-            }
+        } catch (Exception ex) {
+            throw new RuntimeException(ex);
         }
     }
 
