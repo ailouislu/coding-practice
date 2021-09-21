@@ -75,11 +75,11 @@ public class MagicSquare {
                 int n = grid[i][j], n2 = grid[i][j+1], n3 = grid[i][j+2];
                 int n4 = grid[i+1][j], n5 = grid[i+1][j+1], n6 = grid[i+1][j+2];
                 int n7 = grid[i+2][j], n8 = grid[i+2][j+1], n9 = grid[i+2][j+2];
-                // 1 <= grid[i][j] <= 9，且不能出现重复值
+                // 1 <= grid[i][j] <= 9, and no duplicate values can occur
                 if ((n^n2^n3^n4^n5^n6^n7^n8^n9) != (1^2^3^4^5^6^7^8^9)) {
                     continue;
                 }
-                // 三行三列外加两对角线，判断和
+                // Three rows, three columns and two diagonals
                 int sum = n+n2+n3;
                 int sum2 = n4+n5+n6;
                 int sum3 = n7+n8+n9;
