@@ -57,9 +57,8 @@ public class MagicSquare {
     public static int[] strArrayToIntArray(String[] strings){
         int[] ints = new int[strings.length];
 
-        for ( int i = 0; i < strings.length; i++) {
+        for ( int i = 0; i < strings.length; i++)
             ints[i] = Integer.parseInt(strings[i]);
-        }
 
         return ints;
     }
@@ -71,14 +70,16 @@ public class MagicSquare {
 
         int count = 0;
         for (int i=0; i<row-2; i++) {
+
             for (int j=0; j<col-2; j++) {
                 int n = grid[i][j], n2 = grid[i][j+1], n3 = grid[i][j+2];
                 int n4 = grid[i+1][j], n5 = grid[i+1][j+1], n6 = grid[i+1][j+2];
                 int n7 = grid[i+2][j], n8 = grid[i+2][j+1], n9 = grid[i+2][j+2];
+
                 // 1 <= grid[i][j] <= 9, and no duplicate values can occur
-                if ((n^n2^n3^n4^n5^n6^n7^n8^n9) != (1^2^3^4^5^6^7^8^9)) {
+                if ((n^n2^n3^n4^n5^n6^n7^n8^n9) != (1^2^3^4^5^6^7^8^9))
                     continue;
-                }
+
                 // Three rows, three columns and two diagonals
                 int sum = n+n2+n3;
                 int sum2 = n4+n5+n6;
@@ -88,10 +89,12 @@ public class MagicSquare {
                 int sum6 = n3+n6+n9;
                 int sum7 = n+n5+n9;
                 int sum8 = n3+n5+n7;
+
                 if (sum == sum2 && sum2 == sum3 && sum3 == sum4
                         && sum4 == sum5 && sum5 == sum6 && sum6 == sum7
                         && sum7 == sum8) {
-                    count++;
+
+                count++;
                 }
             }
         }
