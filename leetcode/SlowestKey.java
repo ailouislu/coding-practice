@@ -30,6 +30,7 @@ public class SlowestKey {
 			if((releaseTimes[i] - releaseTimes[i-1]) == max) {
 				String a = String.valueOf(keysPressed.charAt(index));
 				String b = String.valueOf(keysPressed.charAt(i));
+
 				if(a.compareTo(b) < 0) {
 					max = releaseTimes[i] - releaseTimes[i-1];
 					index = i;

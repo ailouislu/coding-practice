@@ -3,6 +3,7 @@ import java.util.Arrays;
 import java.util.stream.IntStream;
 
 public class MediaTwoArrays {
+
     public static void main (String[] args) throws Exception {
         int[] nums1 = {1, 2};
         int[] nums2 = {3, 4};
@@ -10,26 +11,25 @@ public class MediaTwoArrays {
         System.out.println(findMedianSortedArrays(nums1, nums2));
     }
 
-        public static double findMedianSortedArrays(int[] nums1, int[] nums2) {
-            double returnNum = 0.00000;
-//            DecimalFormat df = new DecimalFormat("0.00000");
-            int[] nums = IntStream.concat(IntStream.of(nums1), IntStream.of(nums2)).toArray();
-            Arrays.sort(nums);
-            int length = nums.length;
+    public static double findMedianSortedArrays(int[] nums1, int[] nums2) {
+        double returnNum = 0.00000;
+        int[] nums = IntStream.concat(IntStream.of(nums1), IntStream.of(nums2)).toArray();
+        Arrays.sort(nums);
+        int length = nums.length;
 
-            if(length == 1)  returnNum = nums[0];
+        if(length == 1)  returnNum = nums[0];
 
-            if(length % 2 == 1)  returnNum = nums[length/2];
+        if(length % 2 == 1)  returnNum = nums[length/2];
 
-            if(length % 2 == 0){
-                returnNum = (nums[length/2 - 1] + nums[length/2]);
-                returnNum = returnNum/2;
-            }
-
-            //return Double.valueOf(df.format(returnNum));
-            return returnNum;
+        if(length % 2 == 0){
+            returnNum = (nums[length/2 - 1] + nums[length/2]);
+            returnNum = returnNum/2;
         }
+
+        return returnNum;
     }
+
+}
 
 
 /***

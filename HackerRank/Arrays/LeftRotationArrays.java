@@ -22,14 +22,16 @@ public class LeftRotationArrays {
 
         while((line=br.readLine()) != null) {
             if(count == 0){
-                inputList = Stream.of(line.replaceAll("\\s+$", "").split(" "))
-                        .map(Integer::parseInt)
-                        .collect(toList());
-                offset = inputList.get(1);
+                inputList = Stream.of(line.replaceAll("\\s+$", "")
+                                .split(" "))
+                                .map(Integer::parseInt)
+                                .collect(toList());
 
+                offset = inputList.get(1);
                 count++;
                 continue;
             }
+
             try {
                 inputArraysList =
                         Stream.of(line.replaceAll("\\s+$", "").split(" "))

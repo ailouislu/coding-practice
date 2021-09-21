@@ -10,7 +10,7 @@ public class ContainerWithWater {
 		StringJoiner strJoiner = new StringJoiner(" ");
 		strJoiner.add("Buggy").add("Bread");
 		System.out.println(strJoiner); // prints Buggy.Bread
-		
+
 //		int[] nums = {1,8,6,2,5,4,8,3,7};
 		int[] nums = {1,2};
 
@@ -18,11 +18,11 @@ public class ContainerWithWater {
 	}
 	
 	public static int maxArea(int[] height) {
-		int max = Integer.MIN_VALUE;
+        int max = Integer.MIN_VALUE;
         int area = 0;
         int i = 0;
         int j = height.length - 1;
-        
+
         while (i < j) {
             if(height[i] > height[j]) {
                 area = height[j] * (j-i);
@@ -31,13 +31,13 @@ public class ContainerWithWater {
                 j--;
                 continue;
             }
-            
-            area = height[i] * (j-i);    
+
+            area = height[i] * (j-i);
             if(max < area)
                 max = area;
             i++;
         }
-        
+
         return max;
 	}
 
