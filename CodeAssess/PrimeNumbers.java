@@ -15,7 +15,7 @@ public class PrimeNumbers {
         String[] inputString = new String[2];
         int[] inputNumbers = new int [2];
 
-        while((line=br.readLine()) != null) {
+        while((line = br.readLine()) != null) {
             inputString = line.split(" ");
             inputNumbers = strArrayToIntArray(inputString);
 
@@ -45,10 +45,9 @@ public class PrimeNumbers {
         int count = 0;
         for (int j = 0; j < primeNumberList.size();  j++){
             for( int x = 0; x< primeNumberList.size()-1; x++){
-                if(primeNumberList.get(j) == (primeNumberList.get(x) + primeNumberList.get(x+1) + 1 ))
+                if(primeNumberList.get(j) == (primeNumberList.get(x)
+                                    + primeNumberList.get(x+1) + 1 ))
                     count++;
-
-                    //System.out.println(primeNumberList.get(j) + " equals " + primeNumberList.get(x) + " + " + primeNumberList.get(x+1) + " + 1");
             }
         }
 

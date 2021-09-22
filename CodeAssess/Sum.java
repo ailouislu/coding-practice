@@ -12,15 +12,15 @@ public class Sum {
         int sum = 0;
         int count = 0;
 
-        while((line=br.readLine()) != null) {
+        while((line = br.readLine()) != null) {
             if(count == 0) {
                 sum = Integer.parseInt(line);
                 count++;
-            }else {
-                sum += Integer.parseInt(line.trim());
-                System.out.println( sum);
-
+                continue;
             }
+
+            sum += Integer.parseInt(line.trim());
+            System.out.println( sum);
         }
     }
 }

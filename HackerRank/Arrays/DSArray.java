@@ -21,12 +21,13 @@ public class DSArray {
         List<List<Integer>> inputArraysList = new ArrayList<>();
 
         try {
-            while((line=br.readLine()) != null) {
+            while((line = br.readLine()) != null) {
 
                     inputArraysList.add(
-                            Stream.of(line.replaceAll("[^0-9.]", "").split(" "))
-                                .map(Integer::parseInt)
-                                .collect(toList())
+                            Stream.of(line.replaceAll("[^0-9.]", "")
+                                          .split(" "))
+                                          .map(Integer::parseInt)
+                                          .collect(toList())
                     );
 
 
@@ -35,7 +36,8 @@ public class DSArray {
                     count = 0;
                     continue;
                 }
-                    count++;
+
+                count++;
             }
 
         } catch (Exception ex) {

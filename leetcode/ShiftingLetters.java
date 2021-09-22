@@ -21,9 +21,10 @@ public class ShiftingLetters {
         for (int i = 0; i < length; i++) {
             long shiftsNumber = sumArrays(shifts, i);
             shiftsNumber = shiftsNumber > letterNums ? shiftsNumber % letterNums : shiftsNumber;
-            long b = (byte) strBuilder.charAt(i) + shiftsNumber;
 
-            if(b > ASII_a)  b = strBuilder.charAt(i) + 6 + shiftsNumber;
+            long b = (byte) strBuilder.charAt(i) + shiftsNumber;
+            if(b > ASII_a)
+                b = strBuilder.charAt(i) + 6 + shiftsNumber;
 
             strBuilder.setCharAt( i, (char) b );
         }
@@ -32,7 +33,8 @@ public class ShiftingLetters {
     }
 
     public static long sumArrays(int[] nums, int begin){
-        if ( begin == nums.length - 1 ) return nums[begin];
+        if ( begin == nums.length - 1 )
+            return nums[begin];
 
         return nums[begin] +  sumArrays(nums, begin + 1);
     }

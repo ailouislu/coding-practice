@@ -7,7 +7,7 @@ public class CircleIntersection {
         //use the following code to fetch input from console
         String line;
 
-        BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
         int count = 0;
         String[] inputString = new String[3];
@@ -47,9 +47,8 @@ public class CircleIntersection {
 
     public static int[] strArrayToIntArray(String[] strings){
         int[] ints = new int[strings.length];
-        for ( int i = 0; i < strings.length; i++) {
+        for ( int i = 0; i < strings.length; i++)
             ints[i] = Integer.parseInt(strings[i]);
-        }
 
         return ints;
     }

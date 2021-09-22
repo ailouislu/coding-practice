@@ -2,9 +2,6 @@ package CodeAssess;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 
 public class MagicSquare {
     public static void main (String[] args) throws Exception {
@@ -19,7 +16,7 @@ public class MagicSquare {
         int count = 0;
         int[][] inputGrid  = new int[0][0];
 
-        while((line=br.readLine()) != null) {
+        while((line = br.readLine()) != null) {
             if(count == 0){
                 lengthOfArrays = Integer.parseInt(line);
                 inputGrid  = new int[lengthOfArrays][lengthOfArrays];
@@ -33,12 +30,12 @@ public class MagicSquare {
                 //System.out.println(HackerRank.Arrays.toString(inputGrid[count - 1]));
 
                 if(count == lengthOfArrays){
-                    //System.out.println(HackerRank.Arrays.deepToString(inputGrid));
                     System.out.println(numberMagicSquares(inputGrid));
                     count = 0;
                     continue;
                 }
             }
+
             count++;
         }
     }

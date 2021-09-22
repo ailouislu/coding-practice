@@ -19,9 +19,10 @@ public class NewYearChaos {
             try {
                 int n = Integer.parseInt(bufferedReader.readLine().trim());
 
-                List<Integer> q = Stream.of(bufferedReader.readLine().replaceAll("\\s+$", "").split(" "))
-                        .map(Integer::parseInt)
-                        .collect(toList());
+                List<Integer> q = Stream.of(bufferedReader.readLine()
+                                        .replaceAll("\\s+$", "").split(" "))
+                                        .map(Integer::parseInt)
+                                        .collect(toList());
 
                 minimumBribes(q);
 
@@ -41,8 +42,8 @@ public class NewYearChaos {
     public static void minimumBribes(List<Integer> q) {
         // Write your code here
         int[] nums =  q.stream()
-                .mapToInt(Integer::intValue)
-                .toArray();
+                       .mapToInt(Integer::intValue)
+                       .toArray();
 
         int count = 0;
         for (int i = 0; i < nums.length; i++) {

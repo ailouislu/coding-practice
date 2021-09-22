@@ -11,7 +11,7 @@ public class SquareProblem {
 
         int input = 0;
 
-        while((line=br.readLine()) != null) {
+        while((line = br.readLine()) != null) {
             input = Integer.parseInt(line);
 
             System.out.println(input * input);

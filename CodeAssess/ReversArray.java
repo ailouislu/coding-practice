@@ -3,7 +3,7 @@ package CodeAssess;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
-public class ReversaArray {
+public class ReversArray {
     public static void main(String[] args) throws java.lang.Exception {
         //use the following code to fetch input from console
         String line;
@@ -27,7 +27,7 @@ public class ReversaArray {
 
     public static String reversaArray(String[] strings) {
         StringBuilder returnString = new StringBuilder();
-        for (int i = strings.length-1; i >=0 ; i--)
+        for (int i = strings.length-1; i >= 0 ; i--)
             returnString.append(strings[i]).append(" ");
 
         return returnString.toString();
