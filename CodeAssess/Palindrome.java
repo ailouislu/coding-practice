@@ -1,8 +1,7 @@
 package CodeAssess;
 
-import java.io.*;
-import java.util.Arrays;
-import java.util.Locale;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
 
 public class Palindrome {
     public static void main (String[] args) throws java.lang.Exception {
@@ -25,6 +24,7 @@ public class Palindrome {
 
     public static String isPermutation (String[] letterStrings){
         int index = letterStrings.length - 1;
+
         for (int i = 0; i <= index; i++){
             if(!letterStrings[i].equals(letterStrings[(index - i)]))
                 return "NO";

@@ -10,9 +10,9 @@ public class Unique {
         //use the following code to fetch input from console
         String line;
 
-        BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
-        while((line=br.readLine()) != null)
+        while((line = br.readLine()) != null)
             System.out.println(uniqueString(line));
 
     }

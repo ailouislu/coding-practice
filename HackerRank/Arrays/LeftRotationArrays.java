@@ -20,37 +20,39 @@ public class LeftRotationArrays {
         List<Integer>  inputList;
         int offset = 0;
 
-        while((line=br.readLine()) != null) {
-            if(count == 0){
-                inputList = Stream.of(line.replaceAll("\\s+$", "")
-                                .split(" "))
-                                .map(Integer::parseInt)
-                                .collect(toList());
+        try {
+            while((line = br.readLine()) != null) {
+                if(count == 0){
+                    inputList = Stream.of(line.replaceAll("\\s+$", "")
+                                              .split(" "))
+                                              .map(Integer::parseInt)
+                                              .collect(toList());
 
-                offset = inputList.get(1);
-                count++;
-                continue;
-            }
+                    offset = inputList.get(1);
+                    count++;
+                    continue;
+                }
 
-            try {
-                inputArraysList =
-                        Stream.of(line.replaceAll("\\s+$", "").split(" "))
-                            .map(Integer::parseInt)
-                            .collect(toList());
 
-                System.out.println(leftRotation(inputArraysList, offset));
-                count = 0;
+                    inputArraysList =
+                            Stream.of(line.replaceAll("\\s+$", "")
+                                          .split(" "))
+                                          .map(Integer::parseInt)
+                                          .collect(toList());
+
+                    System.out.println(leftRotation(inputArraysList, offset));
+                    count = 0;
+
             }
-            catch (Exception ex) {
-                throw new RuntimeException(ex);
-            }
+        } catch (Exception ex) {
+            throw new RuntimeException(ex);
         }
     }
 
     public static List<Integer> leftRotation(List<Integer> arr, int offset){
-        // Write your code here
         List<Integer> returnList = new ArrayList<>();
         List<Integer> moveList = arr.subList(offset, arr.size());
+
         arr = arr.subList(0, offset);
         returnList.addAll(moveList);
         returnList.addAll(arr);

@@ -13,25 +13,23 @@ public class RansomNote {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
 
         String[] firstMultipleInput = bufferedReader.readLine()
-                .replaceAll("\\s+$", "")
-                .split(" ");
+                                                    .replaceAll("\\s+$", "")
+                                                    .split(" ");
 
         int m = Integer.parseInt(firstMultipleInput[0]);
-
         int n = Integer.parseInt(firstMultipleInput[1]);
 
         List<String> magazine = Stream.of(bufferedReader.readLine()
-                        .replaceAll("\\s+$", "")
-                        .split(" "))
-                        .collect(toList());
+                                      .replaceAll("\\s+$", "")
+                                      .split(" "))
+                                      .collect(toList());
 
         List<String> note = Stream.of(bufferedReader.readLine()
-                        .replaceAll("\\s+$", "")
-                        .split(" "))
-                        .collect(toList());
+                                                    .replaceAll("\\s+$", "")
+                                                    .split(" "))
+                                                    .collect(toList());
 
         checkMagazine(magazine, note);
-
         bufferedReader.close();
     }
 
@@ -44,7 +42,6 @@ public class RansomNote {
      *  2. STRING_ARRAY note
      */
     public static void checkMagazine(List<String> magazine, List<String> note) {
-        // Write your code here
         var map = new HashMap<String, Integer>();
         for(String m : magazine) {
             if (map.get(m) != null) {

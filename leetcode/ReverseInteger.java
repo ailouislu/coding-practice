@@ -13,14 +13,7 @@ public class ReverseInteger {
         int k = 0;
         int j = 15342311;
 
-        System.out.println(reverseIntStream(j));
-    }
-
-    public static int reverseIntStream (int y) {
-        IntStream.iterate(10, x -> x >= 0, x -> x - 1)
-                 .forEach(System.out::println);
-
-        return 1;
+        System.out.println(reverseStream(j));
     }
 
     public static int reverseStream (int x) {

@@ -20,23 +20,28 @@ public class DSArray {
 
         List<List<Integer>> inputArraysList = new ArrayList<>();
 
-        while((line=br.readLine()) != null) {
-            try {
-                inputArraysList.add(
-                        Stream.of(line.replaceAll("[^0-9.]", "").split(" "))
-                            .map(Integer::parseInt)
-                            .collect(toList())
-                );
-            } catch (Exception ex) {
-                throw new RuntimeException(ex);
+        try {
+            while((line = br.readLine()) != null) {
+
+                    inputArraysList.add(
+                            Stream.of(line.replaceAll("[^0-9.]", "")
+                                          .split(" "))
+                                          .map(Integer::parseInt)
+                                          .collect(toList())
+                    );
+
+
+                if(count == 5) {
+                    System.out.println(hourglassSummary(inputArraysList));
+                    count = 0;
+                    continue;
+                }
+
+                count++;
             }
 
-            if(count == 5) {
-                System.out.println(hourglassSummary(inputArraysList));
-                count = 0;
-                continue;
-            }
-                count++;
+        } catch (Exception ex) {
+            throw new RuntimeException(ex);
         }
     }
 

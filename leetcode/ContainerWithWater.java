@@ -5,7 +5,6 @@ import java.util.StringJoiner;
 public class ContainerWithWater {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 
 		StringJoiner strJoiner = new StringJoiner(" ");
 		strJoiner.add("Buggy").add("Bread");
@@ -28,6 +27,7 @@ public class ContainerWithWater {
                 area = height[j] * (j-i);
                 if(max < area)
                     max = area;
+
                 j--;
                 continue;
             }
@@ -35,6 +35,7 @@ public class ContainerWithWater {
             area = height[i] * (j-i);
             if(max < area)
                 max = area;
+
             i++;
         }
 

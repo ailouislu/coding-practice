@@ -15,7 +15,6 @@ public class TwoStrings {
         IntStream.range(0, q).forEach(qItr -> {
             try {
                 String s1 = bufferedReader.readLine();
-
                 String s2 = bufferedReader.readLine();
 
                 System.out.println(twoStrings(s1, s2));
@@ -37,7 +36,6 @@ public class TwoStrings {
      *  2. STRING s2
      */
     public static String twoStrings(String s1, String s2) {
-        // Write your code here
         var map = new HashMap<String, Integer>();
         String m;
 
