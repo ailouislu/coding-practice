@@ -5,6 +5,6 @@ and improving in this way, and it's one of my favorite things
 to do.
 
 # Certificates
-[<img src="java.png" width="600" height="420">](https://www.hackerrank.com/certificates/caa990ba6f28)
+[<img src="images/java.png" width="600" height="420">](https://www.hackerrank.com/certificates/caa990ba6f28)
 
 ![](images/code-practice.gif)
