@@ -1,9 +1,9 @@
-package HackerRank.Test;
+package HackerRank.RealTestChallenges;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
-public class Test1 {
+public class SumArea {
     public static void main (String[] args) throws Exception {
 
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
