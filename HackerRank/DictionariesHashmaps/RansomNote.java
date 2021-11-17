@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Stream;
 
 import static java.util.stream.Collectors.toList;
@@ -42,28 +43,33 @@ public class RansomNote {
      *  2. STRING_ARRAY note
      */
     public static void checkMagazine(List<String> magazine, List<String> note) {
-        var map = new HashMap<String, Integer>();
+        Map map = new HashMap<String, Integer>();
+        int num = 0;
         for(String m : magazine) {
-            if (map.get(m) != null) {
-                map.put(m, map.get(m) + 1);
+            num = (int) map.getOrDefault(m, 0);
+            if (num != 0) {
+                num --;
+                map.put(m, num);
                 continue;
             }
 
             map.put(m, 1);
         }
 
+        int num2;
         for (String n : note) {
-            if (map.get(n) == null) {
+            num2 = (int) map.getOrDefault(n,0);
+            if (num2 == 0) {
                 System.out.println("No");
                 return;
             }
 
-            if (map.get(n) == 1) {
+            if (num2 == 1) {
                 map.remove(n);
                 continue;
             }
 
-            map.put(n, map.get(n) - 1);
+            map.put(n, num2 - 1);
         }
 
         System.out.println("Yes");

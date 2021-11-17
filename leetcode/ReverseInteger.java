@@ -13,21 +13,21 @@ public class ReverseInteger {
         int k = 0;
         int j = 15342311;
 
-        System.out.println(reverseStream(j));
+        System.out.println(reverse(j));
     }
 
-    public static int reverseStream (int x) {
-        List<Integer> list = List.of(x);
-        int[] numstream =  list.stream()
-                 .mapToInt(ReverseInteger::reverse)
-                 .toArray();
-
-        int sum = 0;
-        for(int j = numstream.length-1; j >= 0; j--)
-            sum = sum * 10 + numstream[j];
-
-        return sum;
-    }
+//    public static int reverseStream (int x) {
+//        List<Integer> list = List.of(x);
+//        int[] numstream =  list.stream()
+//                 .mapToInt(ReverseInteger::reverse)
+//                 .toArray();
+//
+//        int sum = 0;
+//        for(int j = numstream.length-1; j >= 0; j--)
+//            sum = sum * 10 + numstream[j];
+//
+//        return sum;
+//    }
 
     public static int reverse (int x) {
         int result = 0;

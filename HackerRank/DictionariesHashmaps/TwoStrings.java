@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.HashMap;
+import java.util.Map;
 import java.util.stream.IntStream;
 
 public class TwoStrings {
@@ -36,13 +37,15 @@ public class TwoStrings {
      *  2. STRING s2
      */
     public static String twoStrings(String s1, String s2) {
-        var map = new HashMap<String, Integer>();
+        Map map = new HashMap<String, Integer>();
         String m;
+        int num;
 
         for(int i = 0; i < s1.length(); i++) {
             m = String.valueOf(s1.charAt(i));
-            if (map.get(m) != null) {
-                map.put(m, map.get(m) + 1);
+            num = (int) map.getOrDefault(m,0);
+            if (num != 0) {
+                num ++;
                 continue;
             }
 
