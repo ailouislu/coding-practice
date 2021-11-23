@@ -33,6 +33,7 @@ public class SmallestElement {
                 ans = A[i];
             }
         }
+
         return ans;
     }
 
