@@ -1,51 +1,39 @@
 package Codility;
 
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
+import java.util.Arrays;
 
-public class BinaryGap {
+public class CyclicRotation {
     public static void main (String[] args) throws Exception {
 
-//        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
-//        int inputNumber = Integer.parseInt(bufferedReader.readLine());
-
-//        int inputNumber = 1041;
-//        int inputNumber = 15;
-        int inputNumber = 32;
-        System.out.println(lengthOfBinaryGap(inputNumber));
-
-//        bufferedReader.close();
+//        int a [] = { 3,8,9,7,6 };
+//        int k = 3;
+        int a [] = { 0,0,0 };
+        int k = 1;
+//        int a [] = { 1,2,3,4 };
+//        int k = 4;
+        System.out.println(Arrays.toString(toRotationArray(a,k)));
     }
 
-    public static int lengthOfBinaryGap(int inputNumber) {
+    public static int[] toRotationArray(int[] a, int k) {
         // write your code in Java SE 8
-        String binary = Integer.toBinaryString(inputNumber);
-        int count = 0;
-        int tmpCount = 0;
-        for (int i = 0; i < binary.length(); i++) {
-            if (binary.charAt(i) == '0') {
-                if (i > 0 && binary.charAt(i - 1) == '1') {
-                    tmpCount++;
-                    continue;
-                }
-                if (tmpCount > 0){
-                    tmpCount++;
-                    continue;
-                }
-            }
-            if (tmpCount > 0 && tmpCount > count) {
-                count = tmpCount;
-            }
+        int length = a.length;
+        int[] result = new int[length];
+        int index = 0;
 
-            tmpCount = 0;
+        for(int i = 0; i < a.length; i ++){
+            index = (k + i) % length;
+            result[index] = a[i];
         }
 
-        return count;
+        return result;
     }
 
 }
 
 /****
+ * CyclicRotation: Rotate an array to the right by a given number of steps.
+ * Task Score: 100%
+ * Correctness: 100%
  * A binary gap within a positive integer N is any maximal sequence of consecutive zeros
  * that is surrounded by ones at both ends in the binary representation of N.
  *

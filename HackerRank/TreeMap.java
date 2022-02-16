@@ -1,47 +1,31 @@
-package Codility;
+package HackerRank;
 
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Map;
 
-public class BinaryGap {
+public class TreeMap {
     public static void main (String[] args) throws Exception {
 
-//        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
-//        int inputNumber = Integer.parseInt(bufferedReader.readLine());
-
-//        int inputNumber = 1041;
-//        int inputNumber = 15;
-        int inputNumber = 32;
-        System.out.println(lengthOfBinaryGap(inputNumber));
-
-//        bufferedReader.close();
-    }
-
-    public static int lengthOfBinaryGap(int inputNumber) {
-        // write your code in Java SE 8
-        String binary = Integer.toBinaryString(inputNumber);
-        int count = 0;
-        int tmpCount = 0;
-        for (int i = 0; i < binary.length(); i++) {
-            if (binary.charAt(i) == '0') {
-                if (i > 0 && binary.charAt(i - 1) == '1') {
-                    tmpCount++;
-                    continue;
-                }
-                if (tmpCount > 0){
-                    tmpCount++;
-                    continue;
-                }
-            }
-            if (tmpCount > 0 && tmpCount > count) {
-                count = tmpCount;
-            }
-
-            tmpCount = 0;
+        Map<String, Integer> map = new java.util.TreeMap<>();
+        map.put("Orange", 1);
+        map.put("Apple", 1);
+        map.put("Pear", 1);
+        List<String> list = new ArrayList(Arrays.asList("Orange","Orange", "Apple", "Banana"));
+        for(String l : list){
+            if(map.containsKey(l))
+                map.put(l, map.get(l) + 1);
+            else
+                map.put(l, 1);
         }
 
-        return count;
+        for (String key : map.keySet())
+            System.out.println(key + ":" + map.get(key));
+
     }
+
+
 
 }
 
