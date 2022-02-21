@@ -6,7 +6,7 @@ import java.util.Map;
 public class PermCheck {
     public static void main (String[] args) throws Exception {
 
-        int a[] = {2,1};
+        int[] a = {2,1};
         System.out.println(permCheck(a));
     }
 
@@ -18,11 +18,11 @@ public class PermCheck {
             map.put(i, 1);
 
         int count = 0;
-        for(int i = 0; i < length; i ++){
-            if(map.containsKey(a[i])){
-                map.remove(a[i]);
-                count ++;
-                if(count == length){
+        for (int j : a) {
+            if (map.containsKey(j)) {
+                map.remove(j);
+                count++;
+                if (count == length) {
                     result = 1;
                     break;
                 }
