@@ -2,11 +2,11 @@ package HackerRank.RealTestChallenges;
 
 public class Fibonacci {
     public static void main (String[] args) throws Exception {
-        int number = 10;
-        System.out.println(fibonacci(number));
+        int number = 8;
+        System.out.println(FibonacciChecker(number));
 
-        System.out.print(1);
-        printFibonacci(number);
+//        System.out.print(1);
+//        printFibonacci(number);
     }
 
     public static int fibonacci(int n){
@@ -25,9 +25,7 @@ public class Fibonacci {
     public static String FibonacciChecker(int num) {
         // code goes here
         int a = 0, b = 1, n;
-        int str;
-
-        while(b<num){
+        while(b < num){
             n = a + b;
             a = b;
             b = n;
