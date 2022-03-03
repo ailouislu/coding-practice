@@ -22,6 +22,22 @@ public class Fibonacci {
         return fibonacci[n];
     }
 
+    public static String FibonacciChecker(int num) {
+        // code goes here
+        int a = 0, b = 1, n;
+        int str;
+
+        while(b<num){
+            n = a + b;
+            a = b;
+            b = n;
+        }
+        if(num == b)
+            return "yes";
+        else
+            return "no";
+    }
+
     static int n1 = 0, n2 = 1, n3 = 0;
     static void printFibonacci(int count) {
         if (count > 0) {
