@@ -2,24 +2,22 @@ package HackerRank.RealTestChallenges;
 
 public class Fibonacci {
     public static void main (String[] args) throws Exception {
-        int number = 8;
-        System.out.println(FibonacciChecker(number));
+        int number = 18;
+        printFibonacci(number);
 
-//        System.out.print(1);
-//        printFibonacci(number);
+        int number1 = 4181;
+        System.out.println(FibonacciChecker(number1));
     }
 
-    public static int fibonacci(int n){
-        int fibonacci[] = new int[n + 2];
-        int i;
-
-        fibonacci[0] = 0;
-        fibonacci[1] = 1;
-
-        for(i = 2; i <= n; i++)
-            fibonacci[i] = fibonacci[i - 1] + fibonacci[i - 2];
-
-        return fibonacci[n];
+    static int a = 0, b = 1, n = 0;
+    static void printFibonacci(int count) {
+        if (count > 0) {
+            n = a + b;
+            a = b;
+            b = n;
+            System.out.print(" " + n);
+            printFibonacci(count - 1);
+        }
     }
 
     public static String FibonacciChecker(int num) {
@@ -36,18 +34,22 @@ public class Fibonacci {
             return "no";
     }
 
-    static int n1 = 0, n2 = 1, n3 = 0;
-    static void printFibonacci(int count) {
-        if (count > 0) {
-            n3 = n1 + n2;
-            n1 = n2;
-            n2 = n3;
-            System.out.print(" " + n3);
-            printFibonacci(count - 1);
-        }
+
+
+    public static int fibonacci(int n){
+        int fibonacci[] = new int[n + 2];
+        int i;
+
+        fibonacci[0] = 0;
+        fibonacci[1] = 1;
+
+        for(i = 2; i <= n; i++)
+            fibonacci[i] = fibonacci[i - 1] + fibonacci[i - 2];
+
+        return fibonacci[n];
     }
 
-    }
+}
 
 /***
  * Fibonacci sequence
