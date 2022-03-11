@@ -7,6 +7,7 @@ import java.util.Map;
 public class BracketValidator {
     public static void main (String[] args) throws Exception {
         ArrayList<String> strings = new ArrayList();
+        strings.add(") )  ( { [] ( ) }");
         strings.add("{ [] ( ) }");
         strings.add("{ [(] ) }");
         strings.add("{ [ }");
@@ -19,27 +20,26 @@ public class BracketValidator {
         Boolean result = false;
         string = string.replaceAll(" ", "");
         Map<String,Integer> map = new HashMap<>();
-        for(Character c : string.toCharArray()) {
-            if (c.toString().equals("(") || c.toString().equals("[") || c.toString().equals("{")) {
-                map.put(c.toString(),map.getOrDefault(c.toString(),1));
-                continue;
-            }
+        for(Character c : string.toCharArray())
+            if (c.toString().equals("(") || c.toString().equals("[") || c.toString().equals("{"))
+                map.put(c.toString(), map.getOrDefault(c.toString(), 0) + 1);
 
+        for(Character c : string.toCharArray()) {
             switch (c.toString()) {
                 case ")":
-                    if (map.get("(") == 1)
+                    if (map.getOrDefault("(", 0) == 1)
                         map.remove("(");
                     else
                         map.put("(", map.getOrDefault("(", 0) - 1);
                     break;
                 case "]":
-                    if (map.get("[") == 1)
+                    if (map.getOrDefault("[", 0) == 1)
                         map.remove("[");
                     else
                         map.put("[", map.getOrDefault("[", 0) - 1);
                     break;
                 case "}":
-                    if (map.get("{") == 1)
+                    if (map.getOrDefault("{", 0) == 1)
                         map.remove("{");
                     else
                         map.put("{", map.getOrDefault("{", 0) - 1);
