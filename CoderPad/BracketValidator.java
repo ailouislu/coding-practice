@@ -6,7 +6,7 @@ import java.util.Map;
 
 public class BracketValidator {
     public static void main (String[] args) throws Exception {
-        ArrayList<String> strings = new ArrayList<String>();
+        ArrayList<String> strings = new ArrayList();
         strings.add("{ [] ( ) }");
         strings.add("{ [(] ) }");
         strings.add("{ [ }");
