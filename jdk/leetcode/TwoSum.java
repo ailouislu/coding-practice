@@ -22,7 +22,7 @@ public class TwoSum {
             numMap.put(nums[i], i);
         }
 
-        int complement = 0;
+        int complement;
         for (int j = 0; j < nums.length; j ++) {
             complement = target - nums[j];
             if (numMap.containsKey(complement) && numMap.get(complement) != j){
